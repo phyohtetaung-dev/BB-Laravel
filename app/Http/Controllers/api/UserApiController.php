@@ -84,6 +84,9 @@ class UserApiController extends Controller
             'type' => 'required',
         ]);
         $user = User::find($request->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->type = $request->type;
 
         return response()->json($user, 200);
     }
